@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào Tháng 10</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            position: relative; /* Để có thể điều chỉnh vị trí của các phần tử con */
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+
+        #blessings {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa các câu chúc */
+        }
+
+        .blessing {
+            margin: 10px 0; /* Khoảng cách giữa các câu chúc */
+            max-width: 80%; /* Giới hạn chiều rộng để dễ đọc */
+            text-align: center; /* Căn giữa nội dung */
+            opacity: 0; /* Bắt đầu với opacity 0 */
+            transition: opacity 0.5s ease; /* Thêm hiệu ứng chuyển đổi */
+        }
+
+        #exit-button {
+            position: absolute; /* Để có thể di chuyển tự do */
+            padding: 10px 20px; /* Kích thước nút */
+            background-color: #ff6b6b; /* Màu nền nút */
+            color: white; /* Màu chữ */
+            border: none; /* Không có viền */
+            border-radius: 5px; /* Bo góc */
+            cursor: pointer; /* Đổi con trỏ khi hover */
+            font-size: 16px; /* Kích thước chữ */
+            display: none; /* Ẩn nút thoát ban đầu */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Giao diện đầu tiên -->
+    <div id="initial-screen">
+        <div id="welcome-message">Chào tháng 10 🍂🍂🍂</div>
+        <button id="forward-button">Ấn Vào Đây Đi</button>
+    </div>
+
+    <!-- Giao diện thứ hai (ẩn lúc đầu) -->
+    <div id="blessings-screen" style="display: none;">
+        <div id="blessings">
+            <div class="blessing hidden">Vậy là đã bắt đầu một tháng mới, tháng của những bông hoa sữa ngào ngạt - tháng đẹp nhất của mùa Thu - tháng của những kỷ niệm, cũng thời gian này năm trước anh gặp và có được cơ hội nói chuyện với em nhưng lại bỏ lỡ, và giờ có thể ở đây nói chuyện với em đúng là kỳ tích anh không nghĩ mình có thể có thêm lần nữa.</div>
+            <div class="blessing hidden">Nhân tiện, hy vọng tháng mới, mọi điều tốt đẹp sẽ đến với em.</div>
+            <div class="blessing hidden">Mong rằng em sẽ ngủ ngon hơn, cũng ít làm nhiều một chút, giành thời gian cho bản thân nhiều hơn.</div>
+            <div class="blessing hidden">Hãy tận hưởng mỗi khoảnh khắc và luôn giữ nụ cười trên môi nhé!</div>
+            <div class="blessing hidden">Chúc em luôn gặp nhiều may mắn, hoàn thành các mục tiêu đặt ra!</div>
+            <div class="blessing hidden">À còn nếu được bắt chuyện anh nhiều hơn xíu ^^. Anh hay em đều có công việc riêng, cuộc sống riêng anh ở đây lắng nghe em chia sẻ và cũng muốn chia sẻ cho em nhiều thứ.</div>
+            <div class="blessing hidden">Cảm ơn em đã giành thời gian để đọc!</div>
+            <div class="blessing hidden">GOOD DAY!</div>
+        </div>
+        <button id="exit-button">Thoát</button> <!-- Nút Thoát -->
+    </div>
+
+    <!-- Thêm âm thanh nền -->
+    <audio id="background-music" loop muted>
+        <source src="music/looming-unease-196205.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Tự động phát nhạc khi trang được tải
+        window.onload = function() {
+            const audio = document.getElementById('background-music');
+            audio.play().then(() => {
+                audio.muted = false; // Bỏ âm thanh tắt nếu cần
+            }).catch(error => {
+                console.error('Error trying to play audio:', error);
+            });
+        };
+    </script>
+
+</body>
+</html>

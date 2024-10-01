@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('bgr.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(1.2); /* Tăng độ sáng hình ảnh nếu cần */
+    color: white;
+    text-align: center;
+}
+
+#welcome-message {
+    font-size: 3rem; /* Tăng kích thước chữ chào */
+    margin-bottom: 20px;
+    font-weight: bold; /* Đậm chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Thêm bóng cho chữ */
+}
+
+#forward-button {
+    background-color: #9ca70f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(92, 79, 8, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#forward-button:hover {
+    background-color: #85640a;
+    transform: translateY(-2px);
+}
+
+#forward-button:active {
+    background-color: #b1a60d;
+}
+
+#blessings {
+    font-size: 2rem; /* Tăng kích thước chữ cho lời chúc */
+    line-height: 1.5; /* Tăng khoảng cách giữa các dòng */
+}
+
+.blessing {
+    margin: 10px 0;
+    font-style: italic; /* Chữ nghiêng */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Thêm bóng cho chữ */
+    opacity: 0; /* Bắt đầu với opacity 0 để mờ dần */
+    transition: opacity 1s ease; /* Hiệu ứng chuyển đổi opacity */
+}
+
+.hidden {
+    display: none; /* Ẩn các lời chúc khi không cần hiển thị */
+}
